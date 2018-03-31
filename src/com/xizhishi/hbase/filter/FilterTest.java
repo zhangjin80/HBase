@@ -35,9 +35,12 @@ public class FilterTest {
 		
 		//3.准备一个扫描对象和过滤器
 		Scan scaner = new Scan();
-		Filter filterRow = new RowFilter(CompareOp.LESS_OR_EQUAL, new BinaryComparator("rk0001".getBytes()));
+		//rowkey小于zhangsan_20180701_0002
+		Filter filterRow = new RowFilter(CompareOp.LESS_OR_EQUAL, new BinaryComparator("zhangsan_20150701_0002".getBytes()));
+		//列簇等于base_info
 		Filter filterFamily  = new FamilyFilter(CompareOp.EQUAL, new BinaryComparator("base_info".getBytes()));
 		Filter filters = new FilterList(filterRow,filterFamily); 
+		//设置扫描组件的过滤器
 		scaner.setFilter(filters);
 		
 		//4.对表进行扫描得到结果集

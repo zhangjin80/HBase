@@ -58,7 +58,11 @@ public class ReadDataFromHBaseToHDFSMR extends Configured implements Tool{
 				IntWritable.class,//outputValueClass Mapper阶段输出的value
 				job,
 				false);
-		/* 
+		/**
+		 * 在当前的MR程序中， 输入的数据是来自于 HBase，  按照常理来说，需要自定义一个数据读取组件读 hbase。
+		 * TableMapReduceUtil.initTableMapperJob这个方法已经把这件事做了。
+		 */
+		/* *
 		 * 注意：以上设置已经包含以下操作不用再进行设置
 		job.setMapperClass(ReadDataFromHBaseToHDFS_Mapper.class);
 		job.setMapOutputKeyClass(Text.class);
