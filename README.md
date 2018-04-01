@@ -83,5 +83,4 @@ put 'user_info', 'baiyc_20180716_0007', 'extra_info:Hobbies', 'music'
 put 'user_info', 'baiyc_20180716_0008', 'extra_info:Hobbies', 'sport'
 put 'user_info', 'rk0001', 'base_info:name', 'luoyufeng'
 put 'user_info', 'rk0001', 'base_info:name', 'zhangsan'
-
 ```
